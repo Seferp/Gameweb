@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Publisher Detail{% endblock %}
+
+{% block content %}
+    <h1>Publisher:</h1>
+    <div class="container">
+      <h2>{{ publisher.title }}</h2>
+      <p>{{ publisher.body }}</p>
+      <p>Publisher name: {{ publisher.name }}</p>
+      <p>Publisher country: {{ publisher.country }}</p>
+    </div>
+{% endblock %}

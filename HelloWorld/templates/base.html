@@ -8,10 +8,13 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+    <a href="{% url 'create-publisher' %}">Create Publisher</a>
+    <a href="{% url 'publisher-detail' 1 %}">Publisher Detail</a>
+    <a href="{% url 'publisher-update' 1 %}">Publisher Edit</a>
+    <a href="{% url 'publisher-delete' 1 %}">Publisher Delete</a>
+    {% block content %}
 
-  {% block content %}
-
-  {% endblock %}
+    {% endblock %}
 
 
 </body>
