@@ -2,9 +2,9 @@ from django import forms
 
 from .models import Category, Publisher
 
-class PublisherForm(forms.ModelForm):
+class CreatePublisherForm(forms.ModelForm):
     class Meta:
-        model: Publisher
+        model = Publisher
         exclude = ['id']
         labels = {
             'name': 'Name',

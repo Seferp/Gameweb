@@ -7,22 +7,25 @@ from django.views.generic import CreateView, UpdateView, DeleteView
 from . import models
 from . import forms
 from .models import Game, GameCategory, Category, Publisher
-from .forms import PublisherForm, CategoryForm
+from .forms import CreatePublisherForm, CategoryForm
 # Create your views here.
 
-LOGGER = getLogger()
+
 
 def hello(request):
-    return render(request, 'hello_world/hello.html')
+    return render(request, "hello_world/hello.html")
 
-class PublisherView(CreateView):
-    model = models.Publisher
-    form_class = forms.PublisherForm
-    success_url = reverse_lazy('')  #Do uzupełnienia
+class CreatePublisherView(CreateView):
+    model = Publisher
+    form_class = forms.CreatePublisherForm
+    template_name = "hello_world/create_publisher.html"
+    success_url = reverse_lazy(hello)
+
 
 
 class CategoryView(CreateView):
     model = models.Category
     form_class = forms.CategoryForm
     success_url = reverse_lazy('')  #Do uzupełnienia
+
 

@@ -10,6 +10,7 @@ from django.core.validators import MinLengthValidator, MaxLengthValidator
 #     country = models.CharField(max_length=50)
 #     type_account = models.CharField(max_length=5)
 #     counter_ratings = models.IntegerField()
+
 class Category(models.Model):
     id = models.IntegerField(primary_key=True, null=False, unique=True)
     type = models.CharField(max_length=50, null=False)
