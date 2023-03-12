@@ -7,7 +7,7 @@
     <h1>List of Games</h1>
     <ul>
       {% for game in games %}
-        <li><b>Title</b>: {{ game.title }} <b>Publisher</b>: {{ game.publisher }} <b>Release date</b>: {{ game.release_date }} <b>Rating</b>: {{ game.rating }} {% include "hello_world/includes/body_game.html" %}</li>
+        <li><b>Title: </b>{{ game.title }} {% include "hello_world/includes/body_game.html" %}</li>
       {% endfor %}
     </ul>
   </section>
