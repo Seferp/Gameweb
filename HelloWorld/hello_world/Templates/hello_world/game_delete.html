@@ -4,7 +4,8 @@
 
 {% block content %}
     <div class="container">
-        <h2>Are you sure?</h2>
+        <h1>Are you sure?</h1>
+        <h2>Do you want delete {{ game.title }}?</h2>
             <form method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}

@@ -5,6 +5,9 @@
 {% block content %}
     <div class="containter">
         <h1>Game:</h1>
-        {{ model.as_p }}
+        <p><b>Game Title: </b>{{ game.title }}</p>
+        <p><b>Game Publisher: </b>{{ game.publisher }}</p>
+        <p><b>Release date: </b>{{ game.release_date }}</p>
+        <p><b>Game Rating: </b>{{ game.rating }}</p>
     </div>
 {% endblock %}

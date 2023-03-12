@@ -26,7 +26,6 @@ class CreateGameForm(forms.ModelForm):
         labels = {
         "title": "Game Title",
         "publisher": "Publisher name",
-        "release_date": "Release Date" ,
-        "rating": "Rating" ,
-        "image": "image"
+        "release_date": "Release Date",
+        "rating": "Rating"
         }

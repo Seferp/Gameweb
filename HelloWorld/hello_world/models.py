@@ -6,7 +6,7 @@ from django.core.validators import MinLengthValidator, MaxLengthValidator, MinVa
 # class User(models.Model):
 #     id = models.IntegerField(primary_key=True, null=False, unique=True)
 #     nickname = models.CharField(null=False, unique=True, MinLengthValidator=7, MaxLengthValidator=20)
-#     password = models.CharField(null=False, MinLengthValidator=7, MaxLengthValidator=20)
+#     password = models.CharField(null=False, validators = [MinLengthValidator(7), MaxLengthValidator(20)])
 #     email_address = models.EmailField()
 #     country = models.CharField(max_length=50)
 #     type_account = models.CharField(max_length=5)
@@ -32,6 +32,7 @@ class Game(models.Model):
     publisher = models.ForeignKey(Publisher, on_delete=models.SET_NULL, null=True,)
     release_date = models.DateField()
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+
 
 
     def __str__(self):

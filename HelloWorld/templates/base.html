@@ -9,21 +9,18 @@
 </head>
 <body>
     <div>
+        <a href="{% url 'hello' %}">Hello</a>
+    </div>
+    <div>
         <a href="{% url 'create-publisher' %}">Create Publisher</a>
-        <a href="{% url 'publisher-detail' 1 %}">Publisher Detail</a>
-        <a href="{% url 'publisher-update' 1 %}">Publisher Edit</a>
-        <a href="{% url 'publisher-delete' 1 %}">Publisher Delete</a>
+        <a href="{% url 'all-publisher' %}">Publisher List</a>
     </div>
     <div>
         <a href="{% url 'create-game' %}">Create Game</a>
-        <a href="{% url 'game-detail' 1 %}">Game Detail</a>
-        <a href="{% url 'game-update' 1 %}">Game Update</a>
-        <a href="{% url 'game-delete' 1 %}">Game Delete</a>
+        <a href="{% url 'all-games' %}">List of Games</a>
     </div>
     {% block content %}
 
     {% endblock %}
-
-
 </body>
 </html>
