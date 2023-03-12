@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ game.title }}{% endblock %}
+
+{% block content %}
+    <div class="containter">
+        <h1>Game:</h1>
+        {{ model.as_p }}
+    </div>
+{% endblock %}

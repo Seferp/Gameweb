@@ -1,5 +1,3 @@
-from logging import getLogger
-
 from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
@@ -7,13 +5,34 @@ from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from . import models
 from . import forms
 from .models import Game, GameCategory, Category, Publisher
-from .forms import CreatePublisherForm, CategoryForm
+
 # Create your views here.
-
-
 
 def hello(request):
     return render(request, "hello_world/hello.html")
+
+class CreateGameView(CreateView):
+    model = Game
+    form_class = forms.CreateGameForm
+    template_name = 'hello_world/create_game.html'
+    success_url = reverse_lazy(hello)
+
+class GameDetailView(DeleteView):
+    model = Game
+    form_class = forms.CreateGameForm
+    template_name = "hello_world/game_detail.html"
+
+class GameUpdateVIew(UpdateView):
+    model = Game
+    template_name = 'hello_world/game_update.html'
+    fields = ["title", "publisher", "release_date"]
+    success_url = reverse_lazy(hello)
+
+class GameDeleteView(DeleteView):
+    model = Game
+    template_name = "hello_world/game_delete.html"
+    success_url = reverse_lazy(hello)
+
 
 class CreatePublisherView(CreateView):
     model = Publisher

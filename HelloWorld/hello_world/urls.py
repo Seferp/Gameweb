@@ -4,7 +4,13 @@ from . import views
 urlpatterns = [
     path("", views.hello),
     path("create-publisher", views.CreatePublisherView.as_view(), name="create-publisher"),
-    path("<int:pk>/", views.PublisherDetail.as_view(), name="publisher-detail"),
-    path("<int:pk>/update", views.PublisherUpdate.as_view(), name="publisher-update"),
-    path("<int:pk>/delete", views.PublisherDelete.as_view(), name="publisher-delete"),
+    path("publisher-detail/<int:pk>", views.PublisherDetail.as_view(), name="publisher-detail"),
+    path("publisher-update/<int:pk>", views.PublisherUpdate.as_view(), name="publisher-update"),
+    path("publisher-delete/<int:pk>", views.PublisherDelete.as_view(), name="publisher-delete"),
+
+    path("create-game", views.CreateGameView.as_view(), name="create-game"),
+    path("game-detail/<int:pk>", views.GameDetailView.as_view(), name="game-detail"),
+    path("game-update/<int:pk>", views.GameUpdateVIew.as_view(), name="game-update"),
+    path("game-delete/<int:pk>", views.GameDeleteView.as_view(), name="game-delete"),
+
 ]

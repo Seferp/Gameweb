@@ -8,10 +8,18 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <a href="{% url 'create-publisher' %}">Create Publisher</a>
-    <a href="{% url 'publisher-detail' 1 %}">Publisher Detail</a>
-    <a href="{% url 'publisher-update' 1 %}">Publisher Edit</a>
-    <a href="{% url 'publisher-delete' 1 %}">Publisher Delete</a>
+    <div>
+        <a href="{% url 'create-publisher' %}">Create Publisher</a>
+        <a href="{% url 'publisher-detail' 1 %}">Publisher Detail</a>
+        <a href="{% url 'publisher-update' 1 %}">Publisher Edit</a>
+        <a href="{% url 'publisher-delete' 1 %}">Publisher Delete</a>
+    </div>
+    <div>
+        <a href="{% url 'create-game' %}">Create Game</a>
+        <a href="{% url 'game-detail' 1 %}">Game Detail</a>
+        <a href="{% url 'game-update' 1 %}">Game Update</a>
+        <a href="{% url 'game-delete' 1 %}">Game Delete</a>
+    </div>
     {% block content %}
 
     {% endblock %}

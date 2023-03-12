@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Category, Publisher
+from .models import Category, Publisher, Game
 
 class CreatePublisherForm(forms.ModelForm):
     class Meta:
@@ -13,8 +13,20 @@ class CreatePublisherForm(forms.ModelForm):
 
 class CategoryForm(forms.ModelForm):
     class Meta:
-        model: Category
+        model = Category
         exclude = ['id']
         labels = {
             'type': 'Category type'
+        }
+
+class CreateGameForm(forms.ModelForm):
+    class Meta:
+        model = Game
+        exclude = ['id']
+        labels = {
+        "title": "Game Title",
+        "publisher": "Publisher name",
+        "release_date": "Release Date" ,
+        "rating": "Rating" ,
+        "image": "image"
         }
