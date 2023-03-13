@@ -14,5 +14,6 @@ urlpatterns = [
     path("game-update/<int:pk>", views.GameUpdateVIew.as_view(), name="game-update"),
     path("game-delete/<int:pk>", views.GameDeleteView.as_view(), name="game-delete"),
     path("all-games", views.GamesListView.as_view(), name="all-games"),
+    path("top-games", views.GameTopListView.as_view(), name="top-games"),
 
 ]

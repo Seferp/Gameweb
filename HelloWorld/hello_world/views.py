@@ -11,6 +11,18 @@ from .models import Game, GameCategory, Category, Publisher
 def hello(request):
     return render(request, "hello_world/hello.html")
 
+
+class GameTopListView(ListView):
+    model = Game
+    template_name = "hello_world/top_games.html"
+    ordering = ("-rating")
+    context_object_name = "top_games"
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        data = queryset[:10]
+        return data
+
 class GamesListView(ListView):
     model = Game
     template_name = "hello_world/all_games.html"

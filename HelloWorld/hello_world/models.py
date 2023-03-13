@@ -28,15 +28,15 @@ class Publisher(models.Model):
 
 class Game(models.Model):
     id = models.IntegerField(primary_key=True, null=False, unique=True)
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100,)
     publisher = models.ForeignKey(Publisher, on_delete=models.SET_NULL, null=True,)
     release_date = models.DateField()
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
 
 
-
     def __str__(self):
         return self.title
+
 
 class GameCategory(models.Model):
     id = models.IntegerField(primary_key=True, null=False, unique=True)

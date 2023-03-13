@@ -7,9 +7,11 @@ class CreatePublisherForm(forms.ModelForm):
         model = Publisher
         exclude = ['id']
         labels = {
-            'name': 'Name',
-            'country': 'Country'
+            "name": 'Name',
+            "country": 'Country'
         }
+    def clean_name(self):
+        return self.cleaned_data['name'].capitalize()
 
 class CategoryForm(forms.ModelForm):
     class Meta:
@@ -24,8 +26,10 @@ class CreateGameForm(forms.ModelForm):
         model = Game
         exclude = ['id']
         labels = {
-        "title": "Game Title",
-        "publisher": "Publisher name",
-        "release_date": "Release Date",
-        "rating": "Rating"
+            "title": "Game Title",
+            "publisher": "Publisher name",
+            "release_date": "Release Date",
+            "rating": "Rating"
         }
+    def clean_title(self):
+        return self.cleaned_data['title'].capitalize()
