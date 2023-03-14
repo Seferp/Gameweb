@@ -10,12 +10,8 @@ from django.core.validators import MinLengthValidator, MaxLengthValidator
 #     country = models.CharField(max_length=50)
 #     type_account = models.CharField(max_length=5)
 #     counter_ratings = models.IntegerField()
-class Category(models.Model):
-    id = models.IntegerField(primary_key=True, null=False, unique=True)
-    type = models.CharField(max_length=50, null=False)
 
-    def __str__(self):
-        return self.type
+
 class Publisher(models.Model):
     id = models.IntegerField(primary_key=True, null=False, unique=True)
     name = models.CharField(max_length=100)
@@ -23,6 +19,13 @@ class Publisher(models.Model):
 
     def __str__(self):
         return self.name
+
+class Category(models.Model):
+    id = models.IntegerField(primary_key=True, null=False, unique=True)
+    type = models.CharField(max_length=50, null=False)
+
+    def __str__(self):
+        return self.type
 
 class Game(models.Model):
     id = models.IntegerField(primary_key=True, null=False, unique=True)
