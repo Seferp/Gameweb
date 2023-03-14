@@ -11,7 +11,7 @@ class PublisherForm(forms.ModelForm):
             'country': 'Country'
         }
 
-class CategoryForm(forms.ModelForm):
+class CreateCategoryForm(forms.ModelForm):
     class Meta:
         model: Category
         exclude = ['id']
