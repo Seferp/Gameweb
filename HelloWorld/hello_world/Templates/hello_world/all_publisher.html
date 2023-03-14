@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Publisher's List{% endblock %}
+
+{% block content %}
+    <section id="all_publisher">
+        <h1>Publisher's:</h1>
+        <ul>
+            {% for publisher in publishers %}
+                <li><b>Publisher name: </b>{{ publisher.name }} {% include "hello_world/includes/body_publisher.html" %}</li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
+

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ game.title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Are you sure?</h1>
+        <h2>Do you want delete {{ game.title }}?</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Delete</button>
+            </form>
+    </div>
+{% endblock %}
