@@ -2,7 +2,7 @@ from logging import getLogger
 
 from django.urls import reverse_lazy
 from django.shortcuts import render
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 
 from . import models
 from . import forms
@@ -15,10 +15,7 @@ LOGGER = getLogger()
 def hello(request):
     return render(request, 'hello_world/hello.html')
 
-class PublisherView(CreateView):
-    model = models.Publisher
-    form_class = forms.PublisherForm
-    success_url = reverse_lazy('')  #Do uzupełnienia
+
 
 class CategoryListView(ListView):
     model = Category
