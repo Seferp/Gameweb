@@ -1,12 +1,16 @@
+from logging import getLogger
+
 from django.urls import reverse_lazy
 from django.shortcuts import render
-from django.views.generic import CreateView, UpdateView, DeleteView, DetailView, ListView
+from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView
 
 from . import models
 from . import forms
 from .models import Game, GameCategory, Category, Publisher
-
+from .forms import PublisherForm, CategoryForm
 # Create your views here.
+
+LOGGER = getLogger()
 
 def hello(request):
     return render(request, "hello_world/hello.html")
@@ -53,6 +57,7 @@ class GameDeleteView(DeleteView):
     success_url = reverse_lazy("all-games")
 
 
+
 class PublisherListView(ListView):
     model = Publisher
     template_name = "hello_world/all_publisher.html"
@@ -80,7 +85,6 @@ class PublisherDelete(DeleteView):
     model = Publisher
     template_name = "hello_world/publisher_delete.html"
     success_url = reverse_lazy("all-publisher")
-
 class CategoryListView(ListView):
     model = Category
     template_name = "hello_world/all_categories.html"
