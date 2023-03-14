@@ -59,7 +59,6 @@ class PublisherListView(ListView):
     ordering = ["name"]
     context_object_name = "publishers"
 
-
 class CreatePublisherView(CreateView):
     model = Publisher
     form_class = forms.CreatePublisherForm
@@ -82,16 +81,25 @@ class PublisherDelete(DeleteView):
     template_name = "hello_world/publisher_delete.html"
     success_url = reverse_lazy("all-publisher")
 
+class CategoryListView(ListView):
+    model = Category
+    template_name = "hello_world/all_categories.html"
+    ordering = ["type"]
+    context_object_name = "categories"
 
+class CreateCategoryView(CreateView):
+    model = Category
+    form_class = forms.CreateCategoryForm
+    template_name = "hello_world/create_categories.html"
+    success_url = reverse_lazy("all-categories")
 
+class CategoryUpdate(UpdateView):
+    model = Category
+    template_name = "hello_world/category_update.html"
+    fields = ['type']
+    success_url = reverse_lazy("all-categories")
 
-
-
-
-class CategoryView(CreateView):
-    model = models.Category
-    form_class = forms.CategoryForm
-    success_url = reverse_lazy('')  #Do uzupełnienia
-
-
-
+class CategoryDelete(DeleteView):
+    model = Category
+    template_name = "hello_world/category_delete.html"
+    success_url = reverse_lazy("all-categories")

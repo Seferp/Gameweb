@@ -13,7 +13,7 @@ class CreatePublisherForm(forms.ModelForm):
     def clean_name(self):
         return self.cleaned_data['name'].capitalize()
 
-class CategoryForm(forms.ModelForm):
+class CreateCategoryForm(forms.ModelForm):
     class Meta:
         model = Category
         exclude = ['id']
