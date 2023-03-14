@@ -7,7 +7,7 @@
     <h1>Top Games</h1>
     <ol>
         {% for game in top_games %}
-            <li><b>Title: </b>{{ game.title }} {% include "hello_world/includes/body_game.html" %}</li>
+            <li><a href="{% url 'game-detail' game.id %}"><b>Title: </b>{{ game.title }}</a></li>
         {% endfor %}
     </ol>
 </section>
