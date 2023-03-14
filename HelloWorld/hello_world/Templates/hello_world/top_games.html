@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Top Games{% endblock %}
+
+{% block content %}
+<section id="top-games">
+    <h1>Top Games</h1>
+    <ol>
+        {% for game in top_games %}
+            <li><b>Title: </b>{{ game.title }} {% include "hello_world/includes/body_game.html" %}</li>
+        {% endfor %}
+    </ol>
+</section>
+{% endblock %}

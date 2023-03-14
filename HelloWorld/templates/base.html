@@ -8,9 +8,20 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-  {% block content %}
+    <div>
+        <a href="{% url 'hello' %}">Hello</a>
+    </div>
+    <div>
+        <a href="{% url 'create-publisher' %}">Create Publisher</a>
+        <a href="{% url 'all-publisher' %}">Publisher List</a>
+    </div>
+    <div>
+        <a href="{% url 'create-game' %}">Create Game</a>
+        <a href="{% url 'all-games' %}">List of Games</a>
+        <a href="{% url 'top-games' %}">Top Games</a>
+    </div>
+    {% block content %}
 
-  {% endblock %}
-
+    {% endblock %}
 </body>
 </html>
